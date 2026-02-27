@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxitime — AIRGATE LLC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1a1a1a;
+            z-index: 100;
+        }
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        nav a:hover,
+        nav a.active {
+            color: #f5f5f5;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+        }
+        .hero .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 26px;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: #888;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #ccc;
+            background: rgba(79, 172, 254, 0.08);
+            border: 1px solid rgba(79, 172, 254, 0.25);
+            letter-spacing: 0.04em;
+        }
+
+        /* Sections */
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: #f5f5f5;
+        }
+        section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        /* Divider */
+        .divider {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            margin: 0 auto 3rem;
+        }
+
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            color: #4facfe;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .step h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+        }
+        .step p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .feature {
+            padding: 1.25rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #1a1a1a;
+        }
+        .feature h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #e0e0e0;
+        }
+        .feature p {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: #777;
+        }
+
+        /* Screenshot */
+        .screenshot-section {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .phone-frame {
+            display: inline-block;
+            padding: 12px;
+            border-radius: 36px;
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .phone-frame img {
+            display: block;
+            width: 260px;
+            border-radius: 24px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid #1a1a1a;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero { padding: 7rem 1.5rem 3rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero .app-icon { width: 90px; height: 90px; border-radius: 20px; }
+            .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .features { grid-template-columns: 1fr; }
+            .phone-frame img { width: 220px; }
+            section { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="proxitime.html" class="active">Proxitime</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <img src="images/app-icon.png" alt="Proxitime app icon" class="app-icon">
+        <h1>proxitime</h1>
+        <p class="tagline">Be present together.</p>
+        <span class="badge">Coming Soon to the App Store</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- What is Proxitime? -->
+    <section>
+        <h2>What is Proxitime?</h2>
+        <p>
+            Proxitime is a proximity-aware app blocker that helps you be present with the people who matter most.
+            When you're physically near your partner or a close friend, Proxitime automatically blocks distracting
+            apps on your phone — and unlocks them when you move apart. Using Ultra-Wideband technology for sub-meter
+            accuracy, it knows exactly when you're together without tracking your location.
+        </p>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Connect</h3>
+                <p>Pair with your partner via Bluetooth. One tap to link your devices.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Choose</h3>
+                <p>Select which apps to block when you're together. Fully customizable per person.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Be Present</h3>
+                <p>When you're nearby, selected apps are automatically blocked. No willpower needed.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Move Apart</h3>
+                <p>Walk away and your apps unlock. Simple, automatic, and seamless.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Ultra-Wideband Precision</h3>
+                <p>Sub-meter distance accuracy on supported iPhones for reliable proximity detection.</p>
+            </div>
+            <div class="feature">
+                <h3>Bluetooth Fallback</h3>
+                <p>Works on all iPhones with Bluetooth, even without UWB hardware.</p>
+            </div>
+            <div class="feature">
+                <h3>Per-Partner Rules</h3>
+                <p>Customize which apps to block for each person you connect with.</p>
+            </div>
+            <div class="feature">
+                <h3>Real-Time Distance</h3>
+                <p>See exactly how far away your partner is with a live distance display.</p>
+            </div>
+            <div class="feature">
+                <h3>Works in Background</h3>
+                <p>Runs quietly in the background. No need to keep the app open.</p>
+            </div>
+            <div class="feature">
+                <h3>Privacy-First</h3>
+                <p>No location tracking, no servers, no accounts. Everything stays on your device.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot -->
+    <div class="screenshot-section">
+        <div class="phone-frame">
+            <img src="images/screenshot.png" alt="Proxitime app showing connected state with UWB distance">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="mailto:contact@airgateapp.com">contact@airgateapp.com</a>
+        <br><br>
+        &copy; 2026 AIRGATE LLC &middot; Los Angeles, CA
+    </footer>
+</body>
+</html>
