@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6F86WHM388.com.airgate.goose"],
+        "components": [
+          {
+            "/": "/goose/join/*",
+            "comment": "GOOSE session join links"
+          }
+        ]
+      }
+    ]
+  }
+}
