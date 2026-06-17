@@ -93,7 +93,7 @@
 <body>
     <div class="content">
         <h1>Privacy Policy — GOOSE</h1>
-        <p class="updated">Last updated: April 16, 2026</p>
+        <p class="updated">Last updated: June 17, 2026</p>
 
         <p class="intro">GOOSE is built and operated by AIRGATE LLC ("we," "our," or "us").</p>
 
@@ -102,7 +102,7 @@
         <h2>What We Collect and Why</h2>
 
         <h3>Account and Authentication</h3>
-        <p>When you sign in with Apple, we receive information needed to authenticate your account, such as an Apple-provided identifier and, if available, your display name. Depending on your Sign in with Apple settings, Apple may also provide an email address or a private relay email address.</p>
+        <p>When you sign in with Apple, we receive an Apple-provided identifier and, if you choose to share it, your name. GOOSE requests only your name from Sign in with Apple — we do not request your email address.</p>
         <p>We use this information to create and maintain your GOOSE account. Authentication is handled through Firebase Authentication, a service operated by Google.</p>
 
         <h3>Profile Information</h3>
@@ -121,6 +121,15 @@
         <h3>Screen Time and App Blocking</h3>
         <p>GOOSE uses Apple's Screen Time-related system APIs to block apps on your device during sessions. We do not collect, store, or transmit the list of apps you use, your Screen Time usage history, or your Screen Time settings. Blocking runs locally on your device.</p>
 
+        <h3>Reports and Blocks</h3>
+        <p>If you report a user or a session, we collect your report — the reason you select, an optional note you write, and a snapshot of the reported display name or session name at the time — so we can review it and act on it. We may retain reports as a safety and moderation record, including after account deletion, to help keep GOOSE safe. If you block another user, we store that block so we can hide that user from your view.</p>
+
+        <h3>Points and Usage</h3>
+        <p>We store usage information tied to your account — such as your goose points, session durations, completed sessions, and time spent in The Pond (the community room) — to power the in-app progress and meter features.</p>
+
+        <h3>Server-Side Processing</h3>
+        <p>Some features — including session crediting, points, moderation report handling, and scheduled cleanup — are performed by server-side functions (Firebase Cloud Functions) operated on our behalf by Google.</p>
+
         <h2>What We Do Not Collect</h2>
         <p>We do not use third-party analytics or third-party crash-reporting SDKs in the current build. We do not collect location data, contacts, photos, or advertising identifiers. Our service providers may process technical information required to operate authentication and database services.</p>
 
@@ -130,12 +139,13 @@
             <li><strong>Sign in with Apple</strong> (Apple) — used to sign you in. <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></li>
             <li><strong>Firebase Authentication</strong> (Google) — used to authenticate your account. <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
             <li><strong>Firebase Realtime Database</strong> (Google) — used to store account and session-related data needed for the app to function.</li>
+            <li><strong>Firebase Cloud Functions</strong> (Google) — server-side functions that handle session crediting, points, moderation report processing, and scheduled cleanup.</li>
         </ul>
         <p>We do not sell your data. We do not use your data for advertising or behavioral targeting.</p>
 
         <h2>Data Retention and Deletion</h2>
-        <p>We retain account, profile, session, presence, and feed data for as long as needed to operate GOOSE and support your account, unless you request deletion or we no longer need the data.</p>
-        <p>For the current beta, you can request account and associated data deletion by contacting us at <a href="mailto:contact@airgateapp.com">contact@airgateapp.com</a>.</p>
+        <p>We retain account, profile, session, presence, feed, points, and usage data for as long as your account is active or as needed to operate GOOSE, unless you request deletion or we no longer need the data.</p>
+        <p>You can delete your account and associated data in the app (Profile → Delete Account), or request deletion by contacting us at <a href="mailto:contact@airgateapp.com">contact@airgateapp.com</a>. When you delete your account, we delete your account and associated personal data. We may retain moderation reports as a safety record, and limited information where required for legal, security, or fraud-prevention purposes.</p>
 
         <h2>Children's Privacy</h2>
         <p>GOOSE is not directed to children under 13, and we do not knowingly collect personal information from children under 13 without verifiable parental consent. If we learn that we have collected personal information from a child under 13 without appropriate consent, we will delete that information.</p>
